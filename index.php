@@ -67,7 +67,7 @@ if($data !=''){
 			if(count($response)>0){
 			$kuchbhi = 'SUCCESS';
 			}
-		} else{
+		 else{
 			$kuchbhi = 'ERROR';
 		}
 	}
