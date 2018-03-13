@@ -38,8 +38,8 @@ if($data !=''){
 						'first_name' =>$data1['shipping_address']['first_name'],
 						'last_name' => $data1['shipping_address']['last_name'],
 						'zip' => $data1['shipping_address']['zip'],,
-						'country_code' =>$data1['shipping_address']['country'],,
-						'phone' => $data1['shipping_address']['phone'],,
+						'country_code' =>$data1['shipping_address']['country'],
+						'phone' => $data1['shipping_address']['phone'],
 						'province' =>  $data1['shipping_address']['province']
 				),
 				'billing_address' => array(
@@ -49,8 +49,8 @@ if($data !=''){
 						'first_name' =>$data1['billing_address']['first_name'],
 						'last_name' => $data1['billing_address']['last_name'],
 						'zip' => $data1['billing_address']['zip'],,
-						'country_code' =>$data1['billing_address']['country'],,
-						'phone' => $data1['billing_address']['phone'],,
+						'country_code' =>$data1['billing_address']['country'],
+						'phone' => $data1['billing_address']['phone'],
 						'province' =>  $data1['billing_address']['province']
 				),
 				'email' =>$data1['email'],
