@@ -18,7 +18,7 @@ if($data !=''){
 					'quantity' => 1,
 					'variant_id' => 255841435662
 					
-				),
+				)
 				 
 			);
 			$order = array(
