@@ -9,8 +9,8 @@ $data=json_decode($data, true);
 //echo "<pre>";print_r($data);echo "</pre>";
 if($data !=''){
 	foreach($data['orders'] as $data1){
-		echo "id=".$data1['id'];
-	/*$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
+      $order_id=$data1['id'];
+	$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
 	
 			$order = array(
 			'order' => array(
@@ -34,27 +34,28 @@ if($data !=''){
 				),
 				"financial_status" => "paid",
 				'shipping_address' => array(
-						'address1' => $shipping_address1,
-						'address2' => $shipping_address2,
-						'city' => $shipping_city,
-						'first_name' => $shipping_first_name,
-						'last_name' => $shipping_last_name,
-						'zip' => $shipping_zip,
-						'country_code' => $shipping_country,
-						'phone' =>  $phone,
-						'province' =>  $shipping_address['state']
+						'address1' => $data1['shipping_address']['address1'],
+						'address2' => $data1['shipping_address']['address2'],
+						'city' =>$data1['shipping_address']['city'],
+						'first_name' =>$data1['shipping_address']['first_name'],
+						'last_name' => $data1['shipping_address']['last_name'],
+						'zip' => $data1['shipping_address']['zip'],,
+						'country_code' =>$data1['shipping_address']['country'],,
+						'phone' => $data1['shipping_address']['phone'],,
+						'province' =>  $data1['shipping_address']['province']
 				),
 				'billing_address' => array(
-						'address1' => $billing_address1,
-						'address2' => $billing_address2,
-						'first_name' => $billing_first_name,
-						'last_name' => $billing_last_name,
-						'city' => $billing_city,
-						'zip' => $billing_zip,
-						'country_code' => $billing_country,
-						'province' => $billing_address['state']
+						'address1' => $data1['billing_address']['address1'],
+						'address2' => $data1['billing_address']['address2'],
+						'city' =>$data1['billing_address']['city'],
+						'first_name' =>$data1['billing_address']['first_name'],
+						'last_name' => $data1['billing_address']['last_name'],
+						'zip' => $data1['billing_address']['zip'],,
+						'country_code' =>$data1['billing_address']['country'],,
+						'phone' => $data1['billing_address']['phone'],,
+						'province' =>  $data1['billing_address']['province']
 				),
-				'email' => $email,
+				'email' =>$data1['email'],
 			));
 	  	
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($order)); 
@@ -63,18 +64,12 @@ if($data !=''){
 			$response = curl_exec($ch);
 			curl_close($ch); // close curl session
 			//print_r(json_decode($response, true));
-			$arr1=json_decode($response, true);
-			$arr2=$arr1['order'];
-			$_SESSION["orderno"] = $arr2['name'];//Order No Generated
-			$ch_stripe = \Stripe\Charge::retrieve($charge->id);
-			$ch_stripe->description = "Valra Order".$_SESSION["orderno"];
-			$ch_stripe->save();
 			if(count($response)>0){
 			$kuchbhi = 'SUCCESS';
 			}
 		} else{
 			$kuchbhi = 'ERROR';
-		}*/
+		}
 	}
 }
 ?>
