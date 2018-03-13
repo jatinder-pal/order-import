@@ -6,7 +6,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $data= curl_exec($ch);
 curl_close($ch);
 $data=json_decode($data, true);
-//echo "<pre>";print_r($data);echo "</pre>";
+echo "<pre>";print_r($data);echo "</pre>";
 if($data !=''){
 	foreach($data as $data1){
 		echo "id=".$data['orders']['id'];
