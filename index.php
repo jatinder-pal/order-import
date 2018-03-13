@@ -1,5 +1,5 @@
 <?php 
-echo "hello123";
+echo "hello1236";
 $url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -9,7 +9,7 @@ $data=json_decode($data, true);
 //echo "<pre>";print_r($data);echo "</pre>";
 if($data !=''){
 	foreach($data as $data1){
-		echo "id=".['id'];
+		echo "id=".$data['id'];
 	/*$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
 	
 			$order = array(
