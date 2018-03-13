@@ -9,7 +9,7 @@ $data=json_decode($data, true);
 echo "<pre>";print_r($data);echo "</pre>";
 if($data !=''){
 	foreach($data as $data1){
-		echo "id=".$data['orders']['id'];
+		echo "id=".$data1['orders']['id'];
 	/*$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
 	
 			$order = array(
