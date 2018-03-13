@@ -13,18 +13,13 @@ if($data !=''){
 	$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
 	
 			$order = array(
-			'order' => array(
-				
-				'line_items' => $line_items,
-				// array(
-						// array(
-							// 'title' => $pname,
-							// 'price' => $pprice,
-							// 'quantity' => 1,
-							// 'variant_id' => $sel_product,
-							// 'total_discounts' => 0.00
-						// )
-						// ),	
+				"line_items": [
+				      {
+					"variant_id":255841435662,
+					"quantity": 1
+				      }
+				    ]
+				  }
 				'transactions' => array(
 					array(
 						'kind' => "authorization",
