@@ -29,7 +29,7 @@ if($data !=''){
 					array(
 						'kind' => "authorization",
 						'status' => "success",
-						'amount' => $pprice
+						'amount' => 400
 						)
 				),
 				"financial_status" => "paid",
