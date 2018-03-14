@@ -30,7 +30,7 @@ if($data !=''){
 	 echo "<pre>";print_r($line_items1);echo "</pre>";
 			$order = array(
 			'order' => array(
-				'line_items' => $line_items,
+				'line_items' => $line_items1,
 				'transactions' => array(
 					array(
 						'kind' => "authorization",
