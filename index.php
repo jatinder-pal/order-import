@@ -1,5 +1,5 @@
 <?php 
-echo "hello123";
+echo "hello1223";
 $url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -38,15 +38,15 @@ if($data !=''){
 						'amount' => 400
 						)
 				),
-				/*"note" => $data1['note'],
+				"note" => $data1['note'],
 				//"token" => $data1['token'],
 				"gateway" => $data1['gateway'],
-				"total_price" => $data1['total_price'],
-				"subtotal_price" => $data1['subtotal_price'],
+				//"total_price" => $data1['total_price'],
+				//"subtotal_price" => $data1['subtotal_price'],
 				"total_weight" => $data1['total_weight'],
 				"total_tax" => $data1['total_tax'],
 				"taxes_included" => $data1['taxes_included'],
-				"currency" => $data1['currency'],
+				//"currency" => $data1['currency'],
 				"financial_status" => $data1['financial_status'],
 				//"confirmed" => $data1['confirmed'],
 				"total_discounts" => $data1['total_discounts'],
@@ -65,7 +65,7 @@ if($data !=''){
 						'price' => $data1['tax_lines']['price'],
 						'rate' => $data1['tax_lines']['rate']
 						
-				),*/
+				),
 				'shipping_address' => array(
 						'address1' => $data1['shipping_address']['address1'],
 						'address2' => $data1['shipping_address']['address2'],
@@ -88,7 +88,7 @@ if($data !=''){
 						'phone' => $data1['billing_address']['phone'],
 						'province' =>  $data1['billing_address']['province']
 				),
-				'email' =>$data1['email'],
+				//'email' =>$data1['email'],
 			));
 	  	      print_r($order);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($order)); 
