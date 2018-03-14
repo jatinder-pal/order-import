@@ -1,6 +1,6 @@
 <?php 
 echo "hello123";
-if(isset($_REQUEST['submit'])){
+if(isset($_REQUEST['submit1'])){
 	echo $page_no= $_REQUEST['page_no'];
 	$url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json?page=".$page_no."limit=250";
 	$ch = curl_init($url);
@@ -125,7 +125,7 @@ if(isset($_REQUEST['submit'])){
 }
 ?>
 </select>
-<input type="submit" value="submit" name="submit">
+<input type="submit" value="submit" name="submit1">
 </form>
 </body>
 </html>
