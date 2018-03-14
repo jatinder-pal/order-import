@@ -1,8 +1,5 @@
 <?php 
 echo "hello123";
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 if(isset($_REQUEST['submit'])){
 	echo $page_no= $_REQUEST['page_no'];
 	$url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json?page=".$page_no."limit=250";
@@ -119,12 +116,16 @@ if(isset($_REQUEST['submit'])){
 	}
 }
 ?>
+<html>
+<body>
 <form name="page_limit" action="">
 <select name="page_no">
 <?php for($i=1;$i<=191;$i++){
-	echo'<option>.'$i.'</option>';
+	echo '<option>.'$i.'</option>';
 }
 ?>
 </select>
 <input type="submit" value="submit" name="submit">
 </form>
+</body>
+</html>
