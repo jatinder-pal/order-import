@@ -1,5 +1,5 @@
 <?php 
-echo "hello123";
+echo "hello1232";
 $url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -51,7 +51,7 @@ if($data !=''){
 				"referring_site" => $data1['referring_site'],
 				"cancelled_at" => $data1['cancelled_at'],
 				"cancel_reason" => $data1['cancel_reason'],
-				"total_price_usd" => $data1['total_price_usd'],
+				//"total_price_usd" => $data1['total_price_usd'],
 				//"checkout_token" => $data1['checkout_token'],
 				"payment_gateway_names" => $data1['payment_gateway_names'][0],
 				"processing_method" => $data1['processing_method'],
