@@ -14,16 +14,20 @@ if($data !=''){
       $order_id=$data1['id'];
 	//$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
 	$ch = curl_init("https://5f43e0b03c04fca40fd4c3798ee017b9:da3170e439ebd7324cbfb50a6c866c44@wishaddict1.myshopify.com/admin/orders.json");
-	$line_items=array(
+	$line_items=array();
+	$line_count=0;
+	 foreach($data1['line_items'] as line_items){
+	   $line_items[$line_count]=
 				array(
-					'title' =>'Elegant Engagement Ring',
-					'price' => 7.94,
-					'quantity' => 1,
-					'variant_id' => 255841435662
+					'title' =>line_items['title'],
+					'price' => line_items['price'],
+					'quantity' =>line_items['quantity'],
+					'variant_id' => line_items['variant_id']
 					
 				)
-				 
-			);
+		$line_count++;		
+	 }
+	 echo "<pre>";print_r($line_items);echo "</pre>";
 			$order = array(
 			'order' => array(
 				'line_items' => $line_items,
