@@ -1,6 +1,5 @@
 <?php 
-error_reporting(0);
-echo "hello1268";
+echo "hello";
 $url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -8,8 +7,10 @@ $data= curl_exec($ch);
 curl_close($ch);
 $data=json_decode($data, true);
 //echo "<pre>";print_r($data);echo "</pre>";
+$i=1;
 if($data !=''){
 	foreach($data['orders'] as $data1){
+	if($i==1)	{
       $order_id=$data1['id'];
 	$ch = curl_init("https://3b4fa03fc3c62dd4bc12df85201806de:826c019d2d1d00f99b3d90682ad58851@jai-shri-ram-2.myshopify.com/admin/orders.json");
 	$line_items=array(
@@ -23,7 +24,6 @@ if($data !=''){
 				 
 			);
 			$order = array(
-			'order' => array(	
 				'line_items' => $line_items,
 				'transactions' => array(
 					array(
@@ -32,7 +32,35 @@ if($data !=''){
 						'amount' => 400
 						)
 				),
-				"financial_status" => "paid",
+				"note" => $data1['note'],
+				"token" => $data1['token'],
+				"gateway" => $data1['gateway'],
+				"total_price" => $data1['total_price'],
+				"subtotal_price" => $data1['subtotal_price'],
+				"total_weight" => $data1['total_weight'],
+				"total_tax" => $data1['total_tax'],
+				"taxes_included" => $data1['taxes_included'],
+				"currency" => $data1['currency'],
+				"financial_status" => $data1['financial_status'],
+				"confirmed" => $data1['confirmed'],
+				"total_discounts" => $data1['total_discounts'],
+				"total_line_items_price" => $data1['total_line_items_price'],
+				"cart_token" => $data1['cart_token'],
+				"buyer_accepts_marketing" => $data1['buyer_accepts_marketing'],
+				"referring_site" => $data1['referring_site'],
+				"cancelled_at" => $data1['cancelled_at'],
+				"cancel_reason" => $data1['cancel_reason'],
+				"total_price_usd" => $data1['total_price_usd'],
+				"checkout_token" => $data1['checkout_token'],
+				"payment_gateway_names" => $data1['payment_gateway_names'][0],
+				"processing_method" => $data1['processing_method'],
+				'tax_lines' => array(
+					array(
+						'title' => $data1['tax_lines']['title'],
+						'price' => $data1['tax_lines']['price'],
+						'rate' => $data1['tax_lines']['rate']
+						)
+				),
 				'shipping_address' => array(
 						'address1' => $data1['shipping_address']['address1'],
 						'address2' => $data1['shipping_address']['address2'],
@@ -57,7 +85,7 @@ if($data !=''){
 				),
 				'email' =>$data1['email'],
 			));
-	  	
+	  	      print_r($order);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($order)); 
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -70,6 +98,9 @@ if($data !=''){
 		 else{
 			$kuchbhi = 'ERROR';
 		}
+		$i++;
 	}
+	
+	}	
 }
 ?>
