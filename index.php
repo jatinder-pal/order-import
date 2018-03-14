@@ -94,7 +94,7 @@ if(isset($_REQUEST['submit'])){
 							'phone' => $data1['billing_address']['phone'],
 							'province' =>  $data1['billing_address']['province']
 					),
-					//'email' =>$data1['email'],
+					'email' =>$data1['email'],
 				));
 				  print_r($order);
 				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($order)); 
