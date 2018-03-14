@@ -22,7 +22,7 @@ if($data !=''){
 					'title' =>$line_items['title'],
 					'price' => $line_items['price'],
 					'quantity' =>$line_items['quantity'],
-					'variant_id' => 7149643333679
+					'variant_id' => $line_items['variant_id']
 					
 				);
 		$line_count++;		
