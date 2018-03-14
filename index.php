@@ -38,7 +38,7 @@ if($data !=''){
 						'amount' => 400
 						)
 				),
-				"note" => $data1['note'],
+				/*"note" => $data1['note'],
 				//"token" => $data1['token'],
 				"gateway" => $data1['gateway'],
 				"total_price" => $data1['total_price'],
@@ -65,7 +65,7 @@ if($data !=''){
 						'price' => $data1['tax_lines']['price'],
 						'rate' => $data1['tax_lines']['rate']
 						
-				),
+				),*/
 				'shipping_address' => array(
 						'address1' => $data1['shipping_address']['address1'],
 						'address2' => $data1['shipping_address']['address2'],
