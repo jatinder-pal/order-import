@@ -26,13 +26,13 @@ if($data !=''){
 			$order = array(
 			'order' => array(
 				'line_items' => $line_items,
-				'transactions' => array(
+				/*'transactions' => array(
 					array(
 						'kind' => "authorization",
 						'status' => "success",
 						'amount' => 400
 						)
-				),
+				),*/
 				"note" => $data1['note'],
 				"token" => $data1['token'],
 				"gateway" => $data1['gateway'],
