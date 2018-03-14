@@ -1,5 +1,5 @@
 <?php 
-echo "hello1223";
+echo "hello123";
 $url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -60,12 +60,12 @@ if($data !=''){
 				//"checkout_token" => $data1['checkout_token'],
 				"payment_gateway_names" => $data1['payment_gateway_names'][0],
 				"processing_method" => $data1['processing_method'],
-				'tax_lines' => array(
+				/*'tax_lines' => array(
 					    'title' => $data1['tax_lines']['title'],
 						'price' => $data1['tax_lines']['price'],
 						'rate' => $data1['tax_lines']['rate']
 						
-				),
+				),*/
 				'shipping_address' => array(
 						'address1' => $data1['shipping_address']['address1'],
 						'address2' => $data1['shipping_address']['address2'],
