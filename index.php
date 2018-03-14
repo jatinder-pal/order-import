@@ -1,5 +1,5 @@
 <?php 
-echo "hello";
+echo "hello123";
 $url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,7 +34,7 @@ if($data !=''){
 						)
 				),*/
 				"note" => $data1['note'],
-				"token" => $data1['token'],
+				//"token" => $data1['token'],
 				"gateway" => $data1['gateway'],
 				"total_price" => $data1['total_price'],
 				"subtotal_price" => $data1['subtotal_price'],
