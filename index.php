@@ -24,6 +24,7 @@ if($data !=''){
 				 
 			);
 			$order = array(
+			'order' => array(
 				'line_items' => $line_items,
 				'transactions' => array(
 					array(
@@ -93,10 +94,10 @@ if($data !=''){
 			curl_close($ch); // close curl session
 			//print_r(json_decode($response, true));
 			if(count($response)>0){
-			$kuchbhi = 'SUCCESS';
+			echo 'SUCCESS';
 			}
 		 else{
-			$kuchbhi = 'ERROR';
+			echo 'ERROR';
 		}
 		$i++;
 	}
