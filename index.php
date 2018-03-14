@@ -118,10 +118,10 @@ if(isset($_REQUEST['submit'])){
 ?>
 <html>
 <body>
-<form name="page_limit" action="" method="post">
+<form name="page_limit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 <select name="page_no">
 <?php for($i=1;$i<=191;$i++){
-	echo '<option>.'$i.'</option>';
+	echo '<option>'.$i.'</option>';
 }
 ?>
 </select>
