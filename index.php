@@ -1,6 +1,8 @@
 <?php 
 echo "hello123";
-error_reporting(0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if(isset($_REQUEST['submit'])){
 	echo $page_no= $_REQUEST['page_no'];
 	$url = "https://9dd7af7202b9e8c10102d3bf486e1bc3:c249c83bc4641859f72478bae65866ea@wishaddict.myshopify.com/admin/orders.json?page=".$page_no."limit=250";
